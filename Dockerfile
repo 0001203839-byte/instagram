@@ -23,6 +23,6 @@ RUN a2enmod rewrite
 
 COPY .docker/vhost.conf /etc/apache2/sites-available/000-default.conf
 
-RUN php artisan config:clear && php artisan view:clear && php artisan cache:clear
+RUN touch /var/www/html/database/database.sqlite && php artisan config:clear && php artisan view:clear
 
 EXPOSE 80
